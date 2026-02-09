@@ -18,13 +18,13 @@ public class ConversorMonedas extends JFrame {
 
     public ConversorMonedas() {
         setTitle("Conversor de Monedas");
-        setSize(460, 420);
+        setSize(480, 440);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-        // Icono (opcional)
+        // Icono de la app
         try {
-            setIconImage(new ImageIcon("src/icono.png").getImage());
+            setIconImage(new ImageIcon("src/icons/icono.png").getImage());
         } catch (Exception ignored) {}
 
         inicializarTasas();
@@ -34,9 +34,9 @@ public class ConversorMonedas extends JFrame {
     private void crearUI() {
 
         Color fondo = new Color(245, 248, 255);
-        Color boton = new Color(52, 120, 246);
+        Color azul = new Color(52, 120, 246);
 
-        JPanel panel = new JPanel(new GridLayout(10, 1, 8, 8));
+        JPanel panel = new JPanel(new GridLayout(10, 1, 10, 10));
         panel.setBorder(BorderFactory.createEmptyBorder(15, 20, 15, 20));
         panel.setBackground(fondo);
 
@@ -45,6 +45,7 @@ public class ConversorMonedas extends JFrame {
 
         // Enter para convertir
         campoCantidad.addKeyListener(new KeyAdapter() {
+            @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     convertir();
@@ -84,7 +85,6 @@ public class ConversorMonedas extends JFrame {
                 iconoEscalado("src/icons/limpiar.png", 24, 24)
         );
 
-
         // Estilo botones
         JButton[] botones = {btnIntercambiar, btnConvertir, btnLimpiar};
         for (JButton b : botones) {
@@ -93,7 +93,7 @@ public class ConversorMonedas extends JFrame {
             b.setHorizontalAlignment(SwingConstants.LEFT);
         }
 
-        btnConvertir.setBackground(Color.green);
+        btnConvertir.setBackground(azul);
         btnConvertir.setForeground(Color.WHITE);
 
         resultado = new JLabel("Resultado: ", SwingConstants.CENTER);
@@ -154,11 +154,10 @@ public class ConversorMonedas extends JFrame {
     }
 
     private void intercambiar() {
-        int origen = monedaOrigen.getSelectedIndex();
-        int destino = monedaDestino.getSelectedIndex();
-
-        monedaOrigen.setSelectedIndex(destino);
-        monedaDestino.setSelectedIndex(origen);
+        int o = monedaOrigen.getSelectedIndex();
+        int d = monedaDestino.getSelectedIndex();
+        monedaOrigen.setSelectedIndex(d);
+        monedaDestino.setSelectedIndex(o);
     }
 
     private void limpiar() {
@@ -184,14 +183,16 @@ public class ConversorMonedas extends JFrame {
 
     private ImageIcon iconoEscalado(String ruta, int ancho, int alto) {
         Image img = new ImageIcon(ruta).getImage();
-        Image imgEscalada = img.getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
-        return new ImageIcon(imgEscalada);
+        Image esc = img.getScaledInstance(ancho, alto, Image.SCALE_SMOOTH);
+        return new ImageIcon(esc);
     }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new ConversorMonedas().setVisible(true));
     }
 }
+
+
 
 
 
