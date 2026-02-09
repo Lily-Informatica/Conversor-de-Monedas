@@ -1,7 +1,8 @@
+# Conversor de Monedas
 El Conversor de Monedas es una aplicación de escritorio desarrollada en Java utilizando la librería Swing para la interfaz gráfica.
 Permite convertir una cantidad de dinero entre distintas monedas de forma rápida y sencilla.
 
-🔹 Funcionalidades principales
+## Funcionalidades principales
 
 1. Ingreso de una cantidad numérica a convertir.
 
@@ -25,4 +26,31 @@ Permite convertir una cantidad de dinero entre distintas monedas de forma rápid
 
 11. Compatible con Java 17 y Java 21.
 
-Esta aplicación es ideal como proyecto académico, práctica de Java o base para futuras mejoras.
+
+
+## Cómo usar el programa
+
+1. Ingresar una cantidad numérica.
+
+2. Seleccionar la moneda de origen.
+
+3. Seleccionar la moneda de destino.
+
+4. Presionar Convertir o la tecla Enter.
+
+5. Ver el resultado y la tasa de conversión.
+
+6. Usar Intercambiar o Limpiar si es necesario.
+
+
+## El conversor de monedas es una aplicación simple pero completa, que demuestra el uso de:
+
+1. Programación orientada a objetos en Java
+
+2. Interfaces gráficas con Swing
+
+3. Manejo de eventos
+
+4. Validación de datos
+
+5. Buenas prácticas de organización del código
